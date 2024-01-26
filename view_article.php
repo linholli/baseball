@@ -2,12 +2,17 @@
  require_once("../baseball/db_connect.php");
 
 
-$sqlAll = "SELECT * FROM article WHERE valid=1";
-$resultAll = $conn->query($sqlAll);
-$articleTotalCount = $resultAll->num_rows;
+// $sqlAll = "SELECT * FROM article WHERE valid=1";
+// $resultAll = $conn->query($sqlAll);
+// $articleTotalCount = $resultAll->num_rows;
 
-$sql = "SELECT * FROM article WHERE valid=1";
+
+
+$sql = "SELECT * FROM article WHERE id=1 and valid=1";
 $result = $conn->query($sql);
+
+
+
 
 ?>
 
@@ -39,11 +44,10 @@ $result = $conn->query($sql);
         <?php
             $rows =$result->fetch_assoc();
 
-            foreach ($rows as $article):
-
-
         ?>
-            <div><h1><?=$article["title"]?></h1></div>
+            <div><h1><?=$rows["title"]?></h1></div>
+            <div><img class="" src="../baseball/assets/img/article_img/<?= $rows["photo"] ?>" alt=""></div>
+            <div><?=$rows["description"]?></div>
 
 
             
@@ -53,7 +57,7 @@ $result = $conn->query($sql);
                 role="button"
             >編輯</a>
         </div>
-        <?php endforeach; ?>
+       
     </div>
 
 

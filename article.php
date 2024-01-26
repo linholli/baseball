@@ -25,7 +25,7 @@ $result = $conn->query($sql);
 
 <body>
     <div class="container">
-        <h1>文章列表頁</h1>
+        <h1 class="articletitle "><i class="fa-solid fa-baseball-bat-ball"></i>文章列表頁<i class="fa-solid fa-baseball"></i></h1>
         <div class="py-2">
             <div class="row g-3">
                 <div class="col">
